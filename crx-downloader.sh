@@ -1,16 +1,17 @@
 #!/bin/sh
 
-# checking if grep and curl are installed
-if ! command -v grep > /dev/null 2>&1
-then
-    echo "Install 'grep' and run again"
-    exit
+# checks if a program is installed
+command_exist() {
+    if ! command -v $1 > /dev/null 2>&1
+    then
+        echo "Install '$1' and run again."
+        exit
+    fi
+}
 
-elif ! command -v curl > /dev/null 2>&1
-then
-    echo "Install 'curl' and run again"
-    exit
-fi
+# checking if grep and curl exist
+command_exist grep
+command_exist curl
 
 # assigning the user input to url
 read -p "Insert the chrome extension link > " url
@@ -27,5 +28,5 @@ then
     curl -L -s -o "$filename"".crx" "$file_url"
     echo "$filename scaricato."
 else
-    echo "Invalid URL"
+    echo "Invalid URL."
 fi
