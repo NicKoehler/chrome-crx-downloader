@@ -1,6 +1,6 @@
 #!/bin/sh
 
-# checking if grep and curl are insalled
+# checking if grep and curl are installed
 if ! command -v grep > /dev/null 2>&1
 then
     echo "Install 'grep' and run again"
