@@ -11,7 +11,7 @@ then
 fi
 
 # assigning the user input to url
-read -p "Insert the chrome extensions link > " url
+read -p "Insert the chrome extension link > " url
 
 # assigning filename and crx_id using grep and rexex
 filename="$(echo $url| grep -oP '(?<=https:\/\/chrome\.google\.com\/webstore\/detail\/).+(?=\/)')"
