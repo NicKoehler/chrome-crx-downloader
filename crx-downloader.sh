@@ -4,10 +4,12 @@
 if ! command -v grep > /dev/null 2>&1
 then
     echo "Install 'grep' and run again"
+    exit
 
 elif ! command -v curl > /dev/null 2>&1
 then
     echo "Install 'curl' and run again"
+    exit
 fi
 
 # assigning the user input to url
