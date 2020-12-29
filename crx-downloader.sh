@@ -14,7 +14,12 @@ command_exist grep
 command_exist curl
 
 # assigning the user input to url
-read -p "Insert the chrome extension link > " url
+if [ -z $1 ]
+then
+    read -p "Insert the chrome extension link > " url
+else
+    url=$1
+fi
 
 # assigning filename and crx_id using grep and rexex
 filename="$(echo $url| grep -oP '(?<=https:\/\/chrome\.google\.com\/webstore\/detail\/).+(?=\/)')"

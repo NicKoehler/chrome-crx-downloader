@@ -4,6 +4,12 @@ curl -O https://raw.githubusercontent.com/NicKoehler/chrome-crx-downloader/maste
 ```
 
 # Run
+
 ```
 ./crx-downloader.sh
+```
+ or 
+
+ ```
+./crx-downloader.sh <EXTENSION_URL>
 ```
