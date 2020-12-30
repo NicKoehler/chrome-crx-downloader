@@ -2,7 +2,7 @@
 
 # checks if a program is installed
 command_exist() {
-    if ! command -v $1 > /dev/null 2>&1
+    if ! command -v $1 > /dev/null
     then
         echo "Install '$1' and run again."
         exit
