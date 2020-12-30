@@ -25,11 +25,11 @@ fi
 filename="$(echo $url| grep -oP '(?<=https:\/\/chrome\.google\.com\/webstore\/detail\/).+(?=\/)')"
 crx_id="$(echo $url| grep -oP '(?<=https:\/\/chrome\.google\.com\/webstore\/detail\/'$filename'\/)[A-z-0-9]+')"
 
-# if the variables exists download the file else echo "Invalid URL"
+# if the variables exist download the file else echo "Invalid URL"
 if !( [ -z $filename ] || [ -z $crx_id ] )
 then
     echo "Downloading $filename.."
-    file_url="https://clients2.google.com/service/update2/crx?response=redirect&os=win&arch=x86-64&os_arch=x86-64&nacl_arch=x86-64&prod=chromecrx&prodchannel=unknown&prodversion=83.0.4103.61&acceptformat=crx2,crx3&x=id%3D"$crx_id"%26uc"
+    file_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=89.0.4356.6&acceptformat=crx2,crx3&x=id%3D"$crx_id"%26uc"
     curl -L -s -o "$filename"".crx" "$file_url"
     echo "$filename scaricato."
 else
