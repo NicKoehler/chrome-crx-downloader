@@ -30,8 +30,8 @@ if !( [ -z $filename ] || [ -z $crx_id ] )
 then
     echo "Downloading $filename.."
     file_url="https://clients2.google.com/service/update2/crx?response=redirect&prodversion=89.0.4356.6&acceptformat=crx2,crx3&x=id%3D"$crx_id"%26uc"
-    curl -L -s -o "$filename"".crx" "$file_url"
-    echo "$filename scaricato."
+    curl -L -s -o "$filename.crx" "$file_url"
+    echo "$filename downloaded."
 else
     echo "Invalid URL."
 fi
