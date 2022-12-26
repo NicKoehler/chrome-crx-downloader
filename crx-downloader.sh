@@ -2,12 +2,13 @@
 
 # checks if a program is installed
 command_exist() {
-    if ! command -v $1 > /dev/null
+    if ! command -v $1 &> /dev/null
     then
         echo "Install '$1' and run again."
         exit
     fi
 }
+#use "&>" as in https://stackoverflow.com/a/677212/5623661
 
 # checking if grep and curl exist
 command_exist grep
